@@ -1,0 +1,158 @@
+---
+title: "Micah Stone Resume"
+author: Micah Stone
+date: "February 24th, 2026"
+output:
+  pagedown::html_resume:
+    css: ['css/custom_resume.css', 'css/styles.css', 'resume']
+    self_contained: true
+---
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(tidyverse)
+library(glue)
+
+PDF_EXPORT <- FALSE
+links <- c()
+
+source('parsing_functions.R')
+
+position_data <- read_csv('positions.csv', show_col_types = FALSE) %>% filter(in_resume)
+```
+
+```{r}
+skills <- tribble(
+  ~skill,                          ~level,
+  "Damage Inspection",             5,
+  "Xactimate Estimating",          5,
+  "Cost Analysis",                 4.5,
+  "Settlement Negotiation",        4.5,
+  "Regulatory Compliance",         4.5,
+  "R Programming",                 4,
+  "Data Analytics",                4
+)
+build_skill_bars(skills)
+```
+
+```{r}
+intro_text <- "Property Claims Adjuster and graduate student pursuing a Master of Science in Program Evaluation and Data Analytics. Experienced in regulatory compliance, cost estimation, and data driven decision making. Skilled in damage inspection, settlement negotiation, and technical documentation within high volume operational environments."
+
+cat(sanitize_links(intro_text))
+```
+
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('education')
+```
+
+
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('positions')
+```
+
+Certifications & Honors {data-icon=newspaper}
+--------------------------------------------------------------------------------
+
+
+```{r}
+position_data %>% print_section('certifications')
+```
+
+```{css}
+:root {
+  --accent-color: #0B3C5D;
+}
+
+body {
+   background: #BFBFBF !important; 
+}
+
+.pagedjs_page,
+.pagedjs_page_content {
+  background: linear-gradient(
+    to right,
+    #FFFFFF 0%,
+    #F3FAFC 40%,
+    #E6F3F7 75%,
+    #DCEAF0 100%
+  ) !important;
+}
+
+.pagedjs_page {
+  box-shadow: none !important;
+}
+
+.main,
+main,
+.resume {
+  background: transparent !important;
+}
+
+h1 {
+  color: #0B3C5D !important;
+}
+
+h2, .section h2 {
+  color: #0B3C5D !important;
+  border-bottom: 2px solid #1CA7A6;
+}
+
+.fa {
+  color: #1CA7A6 !important;
+}
+
+a {
+  color: #1CA7A6 !important;
+}
+
+a:hover {
+  color: #0B3C5D !important;
+}
+
+body {
+  color: #1F2933 !important;
+}
+
+.skill-bar {
+  background: linear-gradient(
+    to right,
+    #0B3C5D,
+    #1CA7A6
+  ) !important;
+
+  color: white !important;
+  border-radius: 4px;
+}
+
+ul {
+  margin-top: 6px;
+  margin-bottom: 8px;
+  padding-left: 18px; 
+}
+
+ul li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+
+ul li::marker {
+  color: #0B3C5D;
+}
+```
+
