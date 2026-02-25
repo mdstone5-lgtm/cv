@@ -42,9 +42,7 @@ build_skill_bars(skills)
 ```
 
 ```{r}
-intro_text <- "Property Claims Adjuster and graduate student pursuing a Master of Science in Program Evaluation and Data Analytics. 
-
-Experienced in regulatory compliance, cost estimation, and data driven decision making. Skilled in damage inspection, settlement negotiation, and technical documentation within high volume operational environments."
+intro_text <- "Property Claims Adjuster and graduate student pursuing a Master of Science in Program Evaluation and Data Analytics. Experienced in regulatory compliance, cost estimation, and data driven decision making. Skilled in damage inspection, settlement negotiation, and technical documentation within high volume operational environments."
 
 cat(sanitize_links(intro_text))
 ```
