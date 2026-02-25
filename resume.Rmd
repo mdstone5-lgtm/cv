@@ -156,6 +156,5 @@ ul li {
 ul li::marker {
   color: #0B3C5D;
 }
-}
 ```
 
