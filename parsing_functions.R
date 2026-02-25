@@ -77,6 +77,7 @@ print_section <- function(dat, section_id) {
 {bullets}
 ")
 }
+
 # Construct a bar chart of skills
 build_skill_bars <- function(skills, out_of = 5){
   bar_color <- "#969696"
