@@ -99,7 +99,6 @@ body {
   box-shadow: none !important;
 }
 
-/* Keep text readable */
 .main,
 main,
 .resume {
@@ -142,22 +141,20 @@ body {
   border-radius: 4px;
 }
 
-/* ===== PROFESSIONAL BULLET STYLING ===== */
-
 ul {
   margin-top: 6px;
   margin-bottom: 8px;
-  padding-left: 18px;        /* controls indent */
+  padding-left: 18px; 
 }
 
 ul li {
-  margin-bottom: 4px;        /* spacing between bullets */
+  margin-bottom: 4px;
   line-height: 1.4;
 }
 
-/* Optional: custom bullet color */
+
 ul li::marker {
-  color: #0B3C5D;            /* ocean accent */
+  color: #0B3C5D;
 }
 }
 ```
